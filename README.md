@@ -33,9 +33,9 @@ Implemented features:
 
 Todo:
 
-- [] Implement sending emails (currently just console logging)
-- [] Add option to resend verification emails
-- [] GitHub and Google authentication flow
+- [ ] Implement sending emails (currently just console logging)
+- [ ] Add option to resend verification emails
+- [ ] GitHub and Google authentication flow
 
 ### Typesafe API
 
