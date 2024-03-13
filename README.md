@@ -59,7 +59,9 @@ Client side form data validation is a must in my opinion, and what is better tha
 
 I won't dive into my choices for prettier and eslint configurations since they are easily customizable, but I know for sure that configuring and finding what suits you takes some time, and myself hate to deal with them. So the way I configured them in this boilerplate works good for me and hope it'll save you some hassle.
 
-Same thing applies to typescript import paths, folder structure, naming conventions... For everyone their preferred way, but this is the way I prefer organizing my project. Feel free to dive a bit into the boilerplate and give me your opinion.
+Same thing applies to typescript import paths, folder structure, naming conventions... For everyone their preferred way, but this is the way I prefer organizing my projects. Feel free to dive a bit into the boilerplate and give me your opinion.
+
+And finally let's not forget the typesafe environment variables with [@t3-oss/env-nextjs](https://env.t3.gg/), the metadata configuration and website icons, those are all optional but I always find myself needing them.
 
 ## Usage
 
