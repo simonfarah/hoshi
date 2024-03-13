@@ -1,6 +1,6 @@
 {
   "name": "hoshi",
-  "description": "description",
+  "description": "An opinionated boilerplate for Next.js",
   "license": "MIT",
   "private": true,
   "author": "Simon Farah <farahsimon22@gmail.com>",
