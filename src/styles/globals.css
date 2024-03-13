@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 8% 5%;
+
+    --primary: 226 70% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 6% 93%;
+    --secondary-foreground: 240 8% 5%;
+
+    --muted: 210 6% 93%;
+    --muted-foreground: 227 6% 45%;
+
+    --accent: 210 6% 93%;
+    --accent-foreground: 240 8% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --card: 240 8% 97%;
+    --card-foreground: 240 8% 5%;
+
+    --popover: 240 8% 97%;
+    --popover-foreground: 240 8% 5%;
+
+    --border: 240 6% 90%;
+    --input: 220 7% 82%;
+    --ring: 225 24% 74%;
+
+    --radius: 0.325rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
