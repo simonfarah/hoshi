@@ -65,7 +65,36 @@ And finally let's not forget the typesafe environment variables with [@t3-oss/en
 
 ## Usage
 
-in progress...
+Clone the repository and change your directory to inside the project:
+
+```
+git clone https://github.com/simonfarah/hoshi
+cd hoshi
+```
+
+Create a `.env` file and replace the env variables with your own:
+
+```
+cp .env.example .env
+```
+
+Install the dependencies (the project is using pnpm):
+
+```
+npm install
+pnpm install
+yarn install
+```
+
+Start the dev server:
+
+```
+npm run dev
+pnpm dev
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your favorite browser and start working on your project.
 
 ## Contributing
 
