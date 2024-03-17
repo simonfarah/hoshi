@@ -1,6 +1,6 @@
 # Hoshi
 
-Hoshi is an opinionated Next.js starter boilerplate designed to provide the essentials for building web applications.
+Hoshi is an opinionated [Next.js](https://nextjs.org/) starter boilerplate designed to provide the essentials for building web applications.
 
 "Hoshi" originates from the Japanese word for "star," and I found it cool to name this boilerplate.
 
