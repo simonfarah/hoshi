@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     {
       rel: 'mask-icon',
       url: '/safari-pinned-tab.svg',
-      color: '#3c61dd',
+      color: '#121212',
     },
   ],
   manifest: '/site.webmanifest',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#fafafa',
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
