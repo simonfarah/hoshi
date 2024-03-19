@@ -16,7 +16,7 @@ export default async function HomePage() {
         <UserDetails user={user} />
       ) : (
         <div className="flex items-center justify-center space-x-2">
-          <Link href="/sign-up" variant="default">
+          <Link href="/sign-up" variant="primary">
             Sign up
           </Link>
 
