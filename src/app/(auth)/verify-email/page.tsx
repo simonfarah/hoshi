@@ -22,7 +22,7 @@ export default async function VerifyEmailPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Verify your {APP_TITLE} account</h1>
+        <h1 className="text-2xl">Verify your {APP_TITLE} account</h1>
 
         <p className="mt-px text-lg text-muted-foreground">
           We sent you an email with a code. Please enter it below to verify your

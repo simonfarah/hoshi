@@ -17,7 +17,7 @@ export default function ResetPasswordPage({
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">Reset your password</h1>
+        <h1 className="text-2xl">Reset your password</h1>
 
         <p className="mt-px text-lg text-muted-foreground">
           Enter your new password.

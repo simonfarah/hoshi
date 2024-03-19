@@ -27,7 +27,7 @@ export function UserDetails({ user }: UserDetailsProps) {
 
   return (
     <div className="space-y-4 text-center">
-      <h1 className="text-3xl font-bold">Welcome back!</h1>
+      <h1 className="text-3xl">Welcome back!</h1>
 
       <div className="rounded-md bg-primary/90 p-3 text-left text-primary-foreground">
         <pre>{JSON.stringify(user, undefined, 2)}</pre>

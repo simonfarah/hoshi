@@ -24,7 +24,7 @@ export default async function SignInPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-2xl font-bold">Sign in to {APP_TITLE}</h1>
+        <h1 className="text-2xl">Sign in to {APP_TITLE}</h1>
 
         <p className="mt-px text-lg text-muted-foreground">
           Don&apos;t have an account?{' '}

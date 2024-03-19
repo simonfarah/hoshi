@@ -24,7 +24,7 @@ export default async function SignUpPage() {
   return (
     <div>
       <div className="mb-10">
-        <h1 className="text-2xl font-bold">Create your {APP_TITLE} account</h1>
+        <h1 className="text-2xl">Create your {APP_TITLE} account</h1>
 
         <p className="mt-px text-lg text-muted-foreground">
           Already have an account?{' '}
