@@ -59,7 +59,7 @@ export function SignUpForm() {
         />
 
         {errors.email && (
-          <p className="text-sm text-destructive">{errors.email.message}</p>
+          <p className="text-sm text-red-500">{errors.email.message}</p>
         )}
       </div>
 
@@ -74,7 +74,7 @@ export function SignUpForm() {
         />
 
         {errors.password && (
-          <p className="text-sm text-destructive">{errors.password.message}</p>
+          <p className="text-sm text-red-500">{errors.password.message}</p>
         )}
       </div>
 
@@ -89,7 +89,7 @@ export function SignUpForm() {
         />
 
         {errors.confirmPassword && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.confirmPassword.message}
           </p>
         )}
@@ -119,7 +119,7 @@ export function SignUpForm() {
         </Label>
 
         {errors.termsOfService && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.termsOfService.message}
           </p>
         )}

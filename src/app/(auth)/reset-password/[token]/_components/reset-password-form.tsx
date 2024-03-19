@@ -57,7 +57,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
         />
 
         {errors.password && (
-          <p className="text-sm text-destructive">{errors.password.message}</p>
+          <p className="text-sm text-red-500">{errors.password.message}</p>
         )}
       </div>
 
@@ -72,7 +72,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
         />
 
         {errors.confirmPassword && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.confirmPassword.message}
           </p>
         )}

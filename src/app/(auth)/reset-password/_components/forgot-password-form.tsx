@@ -49,7 +49,7 @@ export function ForgotPasswordForm() {
         />
 
         {errors.email && (
-          <p className="text-sm text-destructive">{errors.email.message}</p>
+          <p className="text-sm text-red-500">{errors.email.message}</p>
         )}
       </div>
 

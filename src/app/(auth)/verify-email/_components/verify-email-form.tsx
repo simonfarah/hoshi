@@ -54,7 +54,7 @@ export function VerifyEmailForm() {
         />
 
         {errors.code && (
-          <p className="text-sm text-destructive">{errors.code.message}</p>
+          <p className="text-sm text-red-500">{errors.code.message}</p>
         )}
       </div>
 
