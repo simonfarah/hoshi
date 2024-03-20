@@ -9,9 +9,13 @@ import { env } from 'process';
 import { z } from 'zod';
 import { lucia } from '#/lib/auth';
 import {
+  APP_TITLE,
   EMAIL_VERIFICATION_CODE_EXPIRATION,
   PASSWORD_RESET_TOKEN_EXPIRATION,
 } from '#/lib/constants';
+import { sendEmail } from '#/lib/emails';
+import { ForgotPasswordEmail } from '#/lib/emails/forgot-password-email';
+import { VerificationEmail } from '#/lib/emails/verification-email';
 import {
   forgotPasswordSchema,
   resetPasswordSchema,
@@ -113,12 +117,11 @@ export const authRouter = createTRPCRouter({
         expiresAt: createDate(EMAIL_VERIFICATION_CODE_EXPIRATION),
       });
 
-      // TODO: Send email
-      console.log('----------------------------------------');
-      console.log();
-      console.log('EMAIL VERIFICATION CODE: ', code);
-      console.log();
-      console.log('----------------------------------------');
+      await sendEmail({
+        to: email,
+        subject: `${APP_TITLE} email verification code`,
+        react: <VerificationEmail code={code} />,
+      });
 
       const session = await lucia.createSession(userId, {});
       const sessionCookie = lucia.createSessionCookie(session.id);
@@ -173,12 +176,11 @@ export const authRouter = createTRPCRouter({
       expiresAt: createDate(EMAIL_VERIFICATION_CODE_EXPIRATION),
     });
 
-    // TODO: Send email
-    console.log('----------------------------------------');
-    console.log();
-    console.log('EMAIL VERIFICATION CODE: ', code);
-    console.log();
-    console.log('----------------------------------------');
+    await sendEmail({
+      to: ctx.user.email,
+      subject: `${APP_TITLE} email verification code`,
+      react: <VerificationEmail code={code} />,
+    });
 
     return { success: 'A verification email has been sent to your inbox' };
   }),
@@ -280,15 +282,13 @@ export const authRouter = createTRPCRouter({
         expiresAt: createDate(PASSWORD_RESET_TOKEN_EXPIRATION),
       });
 
-      // TODO: Send email
-      console.log('----------------------------------------');
-      console.log();
-      console.log(
-        'PASSWORD RESET LINK: ',
-        env.NEXT_PUBLIC_APP_URL + '/reset-password/' + tokenId,
-      );
-      console.log();
-      console.log('----------------------------------------');
+      const link = env.NEXT_PUBLIC_APP_URL + '/reset-password/' + tokenId;
+
+      await sendEmail({
+        to: email,
+        subject: `${APP_TITLE} reset password link`,
+        react: <ForgotPasswordEmail link={link} />,
+      });
 
       return {
         success:
