@@ -1,21 +1,21 @@
 import 'server-only';
-import { type MySql2Database, drizzle } from 'drizzle-orm/mysql2';
-import mysql from 'mysql2/promise';
+import { Pool } from '@neondatabase/serverless';
+import { type NeonDatabase, drizzle } from 'drizzle-orm/neon-serverless';
 import { env } from '#/env';
 import * as schema from '#/server/db/schema';
 
 declare global {
   // eslint-disable-next-line no-var -- only var works here
-  var drizzle: MySql2Database<typeof schema> | undefined;
+  var drizzle: NeonDatabase<typeof schema> | undefined;
 }
 
 const dbInstance =
   global.drizzle ??
   drizzle(
-    mysql.createPool({
-      uri: env.DATABASE_URL,
+    new Pool({
+      connectionString: env.DATABASE_URL,
     }),
-    { schema, mode: 'default' },
+    { schema },
   );
 
 if (env.NODE_ENV === 'development') global.drizzle = dbInstance;

@@ -53,7 +53,7 @@ Client side form data validation is a must in my opinion, and what is better tha
 
 ### ORM
 
-[Drizzle](https://orm.drizzle.team/) just feels great for me. SQL like syntax, fast performance, edge support, drizzle kit and studio. I love it, works for me. I use it with MySQL but moving to another database is pretty easy.
+[Drizzle](https://orm.drizzle.team/) just feels great for me. SQL like syntax, fast performance, edge support, drizzle kit and studio. I love it, works for me. I use it with [Neon](https://neon.tech/), a serverless PostgreSQL service with awesome features and a generous free tier, but moving to another database is pretty easy.
 
 ---
 

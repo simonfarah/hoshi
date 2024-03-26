@@ -1,12 +1,14 @@
-import { drizzle } from 'drizzle-orm/mysql2';
-import { migrate } from 'drizzle-orm/mysql2/migrator';
-import mysql from 'mysql2/promise';
-import { env } from '#/env';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import { migrate } from 'drizzle-orm/postgres-js/migrator';
+import postgres from 'postgres';
 import * as schema from '#/server/db/schema';
 
 async function runMigrate() {
-  const connection = await mysql.createConnection(env.DATABASE_URL);
-  const db = drizzle(connection, { schema, mode: 'default' });
+  const connection = postgres(process.env.DATABASE_URL!, {
+    ssl: 'require',
+    max: 1,
+  });
+  const db = drizzle(connection, { schema });
 
   console.log('⏳ Running migrations...');
 

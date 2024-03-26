@@ -1,58 +1,54 @@
 {
-  "version": "5",
-  "dialect": "mysql",
-  "id": "880dfda1-3d91-426a-9aac-0375da8ed2f7",
+  "id": "d95ce773-fd75-47b3-b4ff-bc8a9ff30b4e",
   "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
   "tables": {
     "email_verification_codes": {
       "name": "email_verification_codes",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
           "type": "varchar(21)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "primaryKey": true,
+          "notNull": true
         },
         "user_id": {
           "name": "user_id",
           "type": "varchar(21)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "email": {
           "name": "email",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "code": {
           "name": "code",
           "type": "varchar(8)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "expires_at": {
           "name": "expires_at",
-          "type": "datetime",
+          "type": "timestamp",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         }
       },
       "indexes": {
-        "user_idx": {
-          "name": "user_idx",
+        "email_verification_codes--user_idx": {
+          "name": "email_verification_codes--user_idx",
           "columns": [
             "user_id"
           ],
           "isUnique": false
         },
-        "email_idx": {
-          "name": "email_idx",
+        "email_verification_codes--email_idx": {
+          "name": "email_verification_codes--email_idx",
           "columns": [
             "email"
           ],
@@ -60,17 +56,11 @@
         }
       },
       "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "email_verification_codes_id": {
-          "name": "email_verification_codes_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {
         "email_verification_codes_user_id_unique": {
           "name": "email_verification_codes_user_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "user_id"
           ]
@@ -79,32 +69,30 @@
     },
     "password_reset_tokens": {
       "name": "password_reset_tokens",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
           "type": "varchar(40)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "primaryKey": true,
+          "notNull": true
         },
         "user_id": {
           "name": "user_id",
           "type": "varchar(21)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "expires_at": {
           "name": "expires_at",
-          "type": "datetime",
+          "type": "timestamp",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         }
       },
       "indexes": {
-        "user_idx": {
-          "name": "user_idx",
+        "password_reset_tokens--user_idx": {
+          "name": "password_reset_tokens--user_idx",
           "columns": [
             "user_id"
           ],
@@ -112,17 +100,11 @@
         }
       },
       "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "password_reset_tokens_id": {
-          "name": "password_reset_tokens_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {
         "password_reset_tokens_user_id_unique": {
           "name": "password_reset_tokens_user_id_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "user_id"
           ]
@@ -131,32 +113,30 @@
     },
     "sessions": {
       "name": "sessions",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
           "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "primaryKey": true,
+          "notNull": true
         },
         "user_id": {
           "name": "user_id",
           "type": "varchar(21)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "expires_at": {
           "name": "expires_at",
-          "type": "datetime",
+          "type": "timestamp",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         }
       },
       "indexes": {
-        "user_idx": {
-          "name": "user_idx",
+        "sessions--user_idx": {
+          "name": "sessions--user_idx",
           "columns": [
             "user_id"
           ],
@@ -164,68 +144,41 @@
         }
       },
       "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "sessions_id": {
-          "name": "sessions_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
     "users": {
       "name": "users",
+      "schema": "",
       "columns": {
         "id": {
           "name": "id",
           "type": "varchar(21)",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "primaryKey": true,
+          "notNull": true
         },
         "email": {
           "name": "email",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
+          "notNull": true
         },
         "email_verified": {
           "name": "email_verified",
-          "type": "datetime",
+          "type": "timestamp",
           "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
+          "notNull": false
         },
         "hashed_password": {
           "name": "hashed_password",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false,
-          "default": "(now())"
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false,
-          "onUpdate": true,
-          "default": "(now())"
+          "notNull": false
         }
       },
       "indexes": {
-        "email_idx": {
-          "name": "email_idx",
+        "users--email_idx": {
+          "name": "users--email_idx",
           "columns": [
             "email"
           ],
@@ -233,17 +186,11 @@
         }
       },
       "foreignKeys": {},
-      "compositePrimaryKeys": {
-        "users_id": {
-          "name": "users_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {
         "users_email_unique": {
           "name": "users_email_unique",
+          "nullsNotDistinct": false,
           "columns": [
             "email"
           ]
@@ -251,10 +198,11 @@
       }
     }
   },
+  "enums": {},
   "schemas": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
+    "tables": {}
   }
 }
