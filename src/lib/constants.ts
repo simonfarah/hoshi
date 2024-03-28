@@ -9,7 +9,7 @@ export const PASSWORD_RESET_TOKEN_EXPIRATION = new TimeSpan(2, 'h');
 export const REDIRECTS = {
   toSignIn: '/sign-in',
   toVerify: '/verify-email',
-  afterSignIn: '/',
-  afterSignOut: '/',
-  afterVerify: '/',
+  afterSignIn: '/dashboard',
+  afterSignOut: '/sign-in',
+  afterVerify: '/dashboard',
 } as const;
