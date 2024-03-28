@@ -1,4 +1,4 @@
-import { HomeIcon, LinkIcon, LogOutIcon, SettingsIcon } from 'lucide-react';
+import { Icons } from '#/components/icons';
 import { Logo } from '#/components/logo';
 import { Link } from '#/components/ui/link';
 import {
@@ -22,7 +22,7 @@ export function SideNav() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href="/dashboard" variant="ghost" size="icon">
-                <HomeIcon className="h-5 w-5" />
+                <Icons.home className="h-5 w-5" />
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
@@ -33,7 +33,7 @@ export function SideNav() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href="/dashboard" variant="ghost" size="icon">
-                <LinkIcon className="h-5 w-5" />
+                <Icons.link className="h-5 w-5" />
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
@@ -46,7 +46,7 @@ export function SideNav() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href="/dashboard" variant="ghost" size="icon">
-                <SettingsIcon className="h-5 w-5" />
+                <Icons.settings className="h-5 w-5" />
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
@@ -57,7 +57,7 @@ export function SideNav() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link href="/dashboard" variant="ghost" size="icon">
-                <LogOutIcon className="h-5 w-5" />
+                <Icons.signOut className="h-5 w-5" />
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>

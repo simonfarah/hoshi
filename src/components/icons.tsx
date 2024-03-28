@@ -1,14 +1,22 @@
 import {
   CheckIcon,
   ChevronLeftIcon,
+  HomeIcon,
+  LinkIcon,
+  LogOutIcon,
   type LucideProps,
   RefreshCwIcon,
+  SettingsIcon,
 } from 'lucide-react';
 import { cx } from '#/lib/utils';
 
 export const Icons = {
   check: CheckIcon,
   chevronLeft: ChevronLeftIcon,
+  home: HomeIcon,
+  link: LinkIcon,
+  settings: SettingsIcon,
+  signOut: LogOutIcon,
 
   google: ({ ...props }: LucideProps) => (
     <svg
