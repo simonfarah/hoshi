@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { validateRequest } from '#/lib/auth/validate-request';
 import { REDIRECTS } from '#/lib/constants';
 
-export default async function DashboardPage() {
+export default async function SettingsPage() {
   const { user } = await validateRequest();
 
   if (!user) {
@@ -13,5 +13,5 @@ export default async function DashboardPage() {
     redirect(REDIRECTS.toVerify);
   }
 
-  return <h1 className="text-2xl">Dashboard</h1>;
+  return <h1 className="text-2xl">Settings</h1>;
 }

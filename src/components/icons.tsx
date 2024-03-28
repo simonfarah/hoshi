@@ -1,9 +1,9 @@
 import {
   CheckIcon,
   ChevronLeftIcon,
-  HomeIcon,
-  LinkIcon,
-  LogOutIcon,
+  ChevronRightIcon,
+  DotIcon,
+  LayoutDashboardIcon,
   type LucideProps,
   RefreshCwIcon,
   SettingsIcon,
@@ -13,10 +13,10 @@ import { cx } from '#/lib/utils';
 export const Icons = {
   check: CheckIcon,
   chevronLeft: ChevronLeftIcon,
-  home: HomeIcon,
-  link: LinkIcon,
+  chevronRight: ChevronRightIcon,
+  dashboard: LayoutDashboardIcon,
+  dot: DotIcon,
   settings: SettingsIcon,
-  signOut: LogOutIcon,
 
   google: ({ ...props }: LucideProps) => (
     <svg

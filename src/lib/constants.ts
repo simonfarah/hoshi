@@ -1,4 +1,5 @@
 import { TimeSpan } from 'oslo';
+import { Icons } from '#/components/icons';
 
 export const APP_TITLE = 'Hoshi';
 
@@ -13,3 +14,16 @@ export const REDIRECTS = {
   afterSignOut: '/sign-in',
   afterVerify: '/dashboard',
 } as const;
+
+export const DASHBOARD_NAV_LINKS = [
+  {
+    name: 'Dashboard',
+    icon: Icons.dashboard,
+    href: '/dashboard',
+  },
+  {
+    name: 'Settings',
+    icon: Icons.settings,
+    href: '/settings',
+  },
+];
